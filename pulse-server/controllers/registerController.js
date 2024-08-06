@@ -1,5 +1,6 @@
 import bcrypt from 'bcrypt';
 import User from '../models/User.js';
+import { body, validationResult } from 'express-validator';
 
 export const validateRegistration = [
   body('firstName').isString().notEmpty().withMessage('First name is required'),
@@ -12,7 +13,7 @@ export const validateRegistration = [
 
 export const registerUser = async (req, res) => {
   const errors = validationResult(req);
-  
+
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });
   }

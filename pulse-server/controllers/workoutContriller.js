@@ -1,4 +1,4 @@
-import Workout from "../models/Workout";
+import Workout from '../models/Workout';
 
 export const getAllWorkout = async (req, res) => {
   try {
@@ -16,7 +16,7 @@ export const getWorkoutById = async (req, res) => {
     if (workouts) {
       res.status(200).json(workouts);
     } else {
-      res.status(404).json({ message: "Workout not found" });
+      res.status(404).json({ message: 'Workout not found' });
     }
   } catch (error) {
     res.status(500).json({ message: error.message });

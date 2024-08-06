@@ -1,10 +1,10 @@
-import express from "express";
+import express from 'express';
 import {
   getAllTrainings,
   getTrainingById,
-} from "../controllers/trainingController";
+} from '../controllers/trainingController';
 
 const router = express.Router();
 
-router.get("/", getAllTrainings);
-router.get("/:id", getTrainingById);
+router.get('/', getAllTrainings);
+router.get('/:id', getTrainingById);

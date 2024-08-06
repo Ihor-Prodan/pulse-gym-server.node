@@ -1,7 +1,7 @@
-import { DataTypes } from "sequelize";
-import sequelize from "../config/database.js";
+import { DataTypes } from 'sequelize';
+import sequelize from '../config/database.js';
 
-const Workout = sequelize.define("Workout", {
+const Workout = sequelize.define('Workout', {
   name: {
     type: DataTypes.STRING,
     allowNull: false,

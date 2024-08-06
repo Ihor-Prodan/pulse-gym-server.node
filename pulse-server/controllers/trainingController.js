@@ -1,4 +1,4 @@
-import Trainings from "../models/Trainings";
+import Trainings from '../models/Trainings';
 
 export const getAllTrainings = async (req, res) => {
   try {
@@ -16,7 +16,7 @@ export const getTrainingById = async (req, res) => {
     if (training) {
       res.status(200).json(training);
     } else {
-      res.status(404).json({ message: "Training not found" });
+      res.status(404).json({ message: 'Training not found' });
     }
   } catch (error) {
     res.status(500).json({ message: error.message });

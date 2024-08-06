@@ -1,33 +1,29 @@
-import globals from "globals";
-import pluginJs from "@eslint/js";
+import globals from 'globals';
+import prettier from 'eslint-config-prettier';
 
 export default [
-  pluginJs.configs.recommended,
+  prettier,
   {
-    languageOptions: { 
-      globals: { 
-        ...globals.browser, 
-        ...globals.node 
-      }
+    languageOptions: {
+      parserOptions: {
+        ecmaVersion: 2021,
+        sourceType: 'module',
+      },
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
     },
-    env: {
-      node: true,
-      browser: true,
+    plugins: {
     },
     rules: {
-      "no-unused-vars": "error",
-      "no-undef": "error",
-      "no-multi-spaces": "error",
-      "no-empty": "error",
-      "no-trailing-spaces": "error",
-      "eol-last": ["error", "always"],
-      "newline-before-return": "error",
-      "padding-line-between-statements": [
-        "error",
-        { blankLine: "always", prev: "*", next: "return" },
-        { blankLine: "always", prev: ["const", "let", "var"], next: "*" },
-        { blankLine: "any", prev: ["const", "let", "var"], next: ["const", "let", "var"] }
-      ]
+      'no-unused-vars': 'error',
+      'no-undef': 'error',
+      'no-multi-spaces': 'error',
+      'no-trailing-spaces': 'error',
+      'no-console': 'warn',
+      quotes: ['error', 'single'],
+      semi: ['error', 'always'],
     },
   },
 ];
