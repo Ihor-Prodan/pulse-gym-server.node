@@ -1,7 +1,7 @@
-import { DataTypes } from 'sequelize';
-import sequelize from '../config/database.js';
+import { DataTypes } from "sequelize";
+import sequelize from "../config/database.js";
 
-const DataCard = sequelize.define('DataCard', {
+const DataCard = sequelize.define("DataCard", {
   cardNumber: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -11,7 +11,7 @@ const DataCard = sequelize.define('DataCard', {
     allowNull: false,
   },
   date: {
-    type: DataTypes.DATE,
+    type: DataTypes.STRING,
     allowNull: false,
   },
   phoneNumber: {

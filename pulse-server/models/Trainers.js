@@ -1,7 +1,7 @@
-import { DataTypes } from 'sequelize';
-import sequelize from '../config/database.js';
+import { DataTypes } from "sequelize";
+import sequelize from "../config/database.js";
 
-const Trainers = sequelize.define('Trainer', {
+const Trainers = sequelize.define("Trainers", {
   id: {
     type: DataTypes.STRING,
     primaryKey: true,

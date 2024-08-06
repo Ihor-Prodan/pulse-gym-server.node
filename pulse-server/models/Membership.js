@@ -1,13 +1,13 @@
-import { DataTypes } from 'sequelize';
-import sequelize from '../config/database.js';
+import { DataTypes } from "sequelize";
+import sequelize from "../config/database.js";
 
-const Membership = sequelize.define('Membership', {
+const Membership = sequelize.define("Membership", {
   duration: {
     type: DataTypes.STRING,
     allowNull: false,
   },
   date: {
-    type: DataTypes.DATE,
+    type: DataTypes.STRING,
     allowNull: false,
   },
   giveOne: {
