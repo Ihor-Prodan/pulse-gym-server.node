@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../config/database.js';
 
-const Workout = sequelize.define('Workout', {
+const Workouts = sequelize.define('Workouts', {
   name: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -45,4 +45,4 @@ const Workout = sequelize.define('Workout', {
   },
 });
 
-export default Workout;
+export default Workouts;

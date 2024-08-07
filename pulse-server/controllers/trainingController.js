@@ -1,4 +1,4 @@
-import Trainings from '../models/Trainings';
+import Trainings from '../models/Trainings.js';
 
 export const getAllTrainings = async (req, res) => {
   try {

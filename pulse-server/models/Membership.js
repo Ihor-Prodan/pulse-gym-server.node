@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../config/database.js';
 
-const Membership = sequelize.define('Membership', {
+const Membership = sequelize.define('Memberships', {
   duration: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -20,6 +20,30 @@ const Membership = sequelize.define('Membership', {
   },
   giveThree: {
     type: DataTypes.STRING,
+    allowNull: true,
+  },
+  slogan: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  access: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  unlimited: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  locker: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  price: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  best: {
+    type: DataTypes.BOOLEAN,
     allowNull: true,
   },
 });

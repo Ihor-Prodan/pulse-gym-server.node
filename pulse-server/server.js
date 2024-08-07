@@ -1,8 +1,13 @@
+/* eslint-disable no-console */
 import dotenv from 'dotenv';
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import sequelize from './config/database.js';
+import trainersRouter from './routes/trainersRouter.js';
+import workoutsRouters from './routes/workoutsRouters.js';
+import trainingRoutes from './routes/trainingRoutes.js';
+import userRoutes from './routes/userRoutes.js';
 
 dotenv.config();
 
@@ -12,6 +17,12 @@ const PORT = process.env.PORT || 8081;
 app.use(express.json());
 app.use(cors());
 app.use(bodyParser.json());
+
+//routs
+app.use('/trainers', trainersRouter);
+app.use('/workouts', workoutsRouters);
+app.use('/trainings', trainingRoutes);
+app.use('/auth', userRoutes);
 
 (async () => {
   try {

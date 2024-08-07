@@ -1,8 +1,8 @@
-import Workout from '../models/Workout';
+import Workouts from '../models/Workout.js';
 
 export const getAllWorkout = async (req, res) => {
   try {
-    const workouts = await Workout.findAll();
+    const workouts = await Workouts.findAll();
     res.status(200).json(workouts);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -11,7 +11,7 @@ export const getAllWorkout = async (req, res) => {
 
 export const getWorkoutById = async (req, res) => {
   try {
-    const workouts = await Workout.findByPk(req.params.id);
+    const workouts = await Workouts.findByPk(req.params.id);
 
     if (workouts) {
       res.status(200).json(workouts);
