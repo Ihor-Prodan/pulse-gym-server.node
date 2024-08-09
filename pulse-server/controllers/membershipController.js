@@ -1,6 +1,7 @@
 import Membership from '../models/Membership.js';
 
 export const createMembership = async (membershipData) => {
+  console.log(membershipData);
   try {
     const membership = await Membership.create(membershipData);
     console.log('Membership created:', membership);

@@ -1,8 +1,9 @@
 import express from 'express';
+import { createMembership, getMembershipById } from '../controllers/membershipController.js';
 
 const router = express.Router();
 
-// router.get('/', getAllTrainers);
-// router.get('/:id', getTrainerById);
+router.post('/', createMembership);
+router.get('/:id', getMembershipById);
 
 export default router;

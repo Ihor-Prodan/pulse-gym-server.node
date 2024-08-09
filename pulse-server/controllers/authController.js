@@ -25,8 +25,22 @@ export const authenticateUser = async (req, res) => {
       expiresIn: '1h',
     });
 
-    res.status(200).json({ message: 'Authentication successful', token });
+    res.cookie('token', token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      maxAge: 3600000,
+    });
+    return res.status(200).json({
+      message: 'Authentication successful',
+      user: {
+        id: user.id,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
+      },
+    });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    return res.status(500).json({ message: error.message });
   }
 };
+

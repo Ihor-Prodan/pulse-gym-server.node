@@ -8,6 +8,7 @@ import trainersRouter from './routes/trainersRouter.js';
 import workoutsRouters from './routes/workoutsRouters.js';
 import trainingRoutes from './routes/trainingRoutes.js';
 import userRoutes from './routes/userRoutes.js';
+import membershipRouts from './routes/membershipRouts.js';
 
 dotenv.config();
 
@@ -23,6 +24,7 @@ app.use('/trainers', trainersRouter);
 app.use('/workouts', workoutsRouters);
 app.use('/trainings', trainingRoutes);
 app.use('/auth', userRoutes);
+app.use('/membership', membershipRouts);
 
 (async () => {
   try {
