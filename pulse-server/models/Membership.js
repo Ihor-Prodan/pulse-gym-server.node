@@ -4,11 +4,11 @@ import sequelize from '../config/database.js';
 const Membership = sequelize.define('Memberships', {
   duration: {
     type: DataTypes.STRING,
-    allowNull: false,
+    notNull: false,
   },
   date: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   giveOne: {
     type: DataTypes.STRING,

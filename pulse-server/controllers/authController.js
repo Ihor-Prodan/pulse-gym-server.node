@@ -2,6 +2,7 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 import User from '../models/User.js';
+import Membership from '../models/Membership.js';
 
 dotenv.config();
 
@@ -25,6 +26,8 @@ export const authenticateUser = async (req, res) => {
       expiresIn: '1h',
     });
 
+    const membership = await Membership.findOne({ where: { userId: user.id } });
+
     res.cookie('token', token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
@@ -33,10 +36,11 @@ export const authenticateUser = async (req, res) => {
     return res.status(200).json({
       message: 'Authentication successful',
       user: {
-        id: user.id,
+        userId: user.id,
         firstName: user.firstName,
         lastName: user.lastName,
         email: user.email,
+        membership: membership || null,
       },
     });
   } catch (error) {

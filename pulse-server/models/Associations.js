@@ -4,14 +4,35 @@ import User from './User.js';
 import Workout from './Workout.js';
 import Trainers from './Trainers.js';
 
-User.hasOne(Membership);
-Membership.belongsTo(User);
+User.hasOne(Membership, {
+  foreignKey: 'userId',
+  as: 'membership'
+});
 
-User.hasMany(Workout);
-Workout.belongsTo(User);
+Membership.belongsTo(User, {
+  foreignKey: 'userId',
+  as: 'user'
+});
 
-User.hasOne(DataCard);
-DataCard.belongsTo(User);
+User.hasMany(Workout, {
+  foreignKey: 'userId',
+  as: 'workouts'
+});
+
+Workout.belongsTo(User, {
+  foreignKey: 'userId',
+  as: 'user'
+});
+
+User.hasOne(DataCard, {
+  foreignKey: 'userId',
+  as: 'dataCard'
+});
+
+DataCard.belongsTo(User, {
+  foreignKey: 'userId',
+  as: 'user'
+});
 
 Workout.belongsTo(Trainers);
 Trainers.hasMany(Workout);
