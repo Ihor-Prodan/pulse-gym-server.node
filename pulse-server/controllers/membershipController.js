@@ -36,7 +36,6 @@ export const createMembership = async (req, res) => {
       price,
       best
     });
-
     console.log('Membership created:', membership);
     res.status(201).json(membership);
 

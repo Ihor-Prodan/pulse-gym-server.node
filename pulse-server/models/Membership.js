@@ -46,6 +46,14 @@ const Membership = sequelize.define('Memberships', {
     type: DataTypes.BOOLEAN,
     allowNull: true,
   },
+  userId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    references: {
+      model: 'Users',
+      key: 'id',
+    },
+  },
 });
 
 export default Membership;
