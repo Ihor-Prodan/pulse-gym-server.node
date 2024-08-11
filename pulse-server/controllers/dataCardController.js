@@ -52,6 +52,12 @@ export const createCardData = [
         return res.status(404).json({ error: 'User not found' });
       }
 
+      const existingCard = await DataCard.findOne({ where: { userId } });
+
+      if (existingCard) {
+        return res.status(400).json({ error: 'Card already exists for this user' });
+      }
+
       const encryptedCardNumber = encryptCardNumber(cardNumber);
       const encryptedCvv = encryptCardNumber(cvv);
 
