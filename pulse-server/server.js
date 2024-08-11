@@ -10,6 +10,9 @@ import trainingRoutes from './routes/trainingRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import membershipRouts from './routes/membershipRouts.js';
 import cardRouts from './routes/cardRouts.js';
+import updateUserRouter from './routes/updateUserRouter.js';
+import updateCardRouter from './routes/updateCardRouter.js';
+
 
 dotenv.config();
 
@@ -24,10 +27,16 @@ app.use(bodyParser.json());
 app.use('/trainers', trainersRouter);
 app.use('/workouts', workoutsRouters);
 app.use('/trainings', trainingRoutes);
-app.use('/auth', userRoutes);
+app.use('remove/:id', trainingRoutes);
 app.use('/membership', membershipRouts);
 app.use('/card-data', cardRouts);
-app.get('/find-user', userRoutes);
+app.use('/booking', trainingRoutes);
+app.use('/auth', userRoutes);
+
+app.use('/user', updateUserRouter);
+app.use('/card', updateCardRouter);
+
+
 
 (async () => {
   try {

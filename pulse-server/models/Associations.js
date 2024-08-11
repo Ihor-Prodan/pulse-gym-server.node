@@ -4,16 +4,6 @@ import User from './User.js';
 import Workout from './Workout.js';
 import Trainers from './Trainers.js';
 
-// User.hasOne(Membership, {
-//   foreignKey: 'userId',
-//   as: 'membership'
-// });
-//
-// Membership.belongsTo(User, {
-//   foreignKey: 'userId',
-//   as: 'user'
-// });
-
 User.hasOne(Membership, { foreignKey: 'userId' });
 Membership.belongsTo(User, { foreignKey: 'userId' });
 

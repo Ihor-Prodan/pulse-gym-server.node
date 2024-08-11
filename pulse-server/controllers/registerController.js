@@ -1,6 +1,11 @@
 import bcrypt from 'bcrypt';
 import User from '../models/User.js';
 import { body, validationResult } from 'express-validator';
+import { JWT_SECRET } from './authController.js';
+import jwt from 'jsonwebtoken';
+import Membership from '../models/Membership.js';
+import UserWorkouts from '../models/UserWorkouts.js';
+import { getDecryptedCardData } from './dataCardController.js';
 
 export const validateRegistration = [
   body('firstName').isString().notEmpty().withMessage('First name is required'),
@@ -36,7 +41,41 @@ export const registerUser = async (req, res) => {
       password: hashedPassword,
     });
 
-    res.status(201).json({ message: 'User registered successfully', user: newUser });
+    const token = jwt.sign({ id: newUser.id, email: newUser.email }, JWT_SECRET, {
+      expiresIn: '1h',
+    });
+
+    const membership = await Membership.findOne({ where: { userId: newUser.id } });
+    const bookingWorkouts = await UserWorkouts.findAll({ where: { userId: newUser.id } });
+    let decryptedCardData = null;
+    const userBookingWorkouts = [...bookingWorkouts];
+
+    try {
+      decryptedCardData = await getDecryptedCardData(newUser.id);
+    } catch {
+      decryptedCardData = null;
+    }
+
+    res.cookie('token', token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      maxAge: 3600000,
+    });
+
+    res.status(201).json({
+      message: 'User registered successfully',
+      token: token,
+      user: {
+        userId: newUser.id,
+        firstName: newUser.firstName,
+        lastName: newUser.lastName,
+        email: newUser.email,
+        membership: membership || null,
+        dataCard: decryptedCardData || null,
+        workouts: userBookingWorkouts || [],
+      },
+    });
+
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

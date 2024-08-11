@@ -4,15 +4,17 @@ import dotenv from 'dotenv';
 import User from '../models/User.js';
 import Membership from '../models/Membership.js';
 import { getDecryptedCardData } from './dataCardController.js';
+import UserWorkouts from '../models/UserWorkouts.js';
 
 dotenv.config();
 
-const JWT_SECRET = process.env.JWT_SECRET;
+export const JWT_SECRET = process.env.JWT_SECRET;
 
 export const authenticateUser = async (req, res) => {
   try {
     const { email, password } = req.body;
-    const user = await User.findOne({ where: { email }});
+    const user = await User.findOne({ where: { email } });
+
     if (!user) {
       return res.status(401).json({ message: 'Invalid credentials' });
     }
@@ -28,9 +30,13 @@ export const authenticateUser = async (req, res) => {
     });
 
     const membership = await Membership.findOne({ where: { userId: user.id } });
+    const bookingWorkouts = await UserWorkouts.findAll({ where: { userId: user.id } });
     let decryptedCardData = null;
+    const userBookingWorkouts = [...bookingWorkouts];
+
     try {
       decryptedCardData = await getDecryptedCardData(user.id);
+
     } catch {
       decryptedCardData = null;
     }
@@ -39,8 +45,10 @@ export const authenticateUser = async (req, res) => {
       secure: process.env.NODE_ENV === 'production',
       maxAge: 3600000,
     });
+
     return res.status(200).json({
       message: 'Authentication successful',
+      token: token,
       user: {
         userId: user.id,
         firstName: user.firstName,
@@ -48,25 +56,59 @@ export const authenticateUser = async (req, res) => {
         email: user.email,
         membership: membership || null,
         dataCard: decryptedCardData || null,
+        workouts: userBookingWorkouts || [],
       },
     });
+
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
 };
 
-export const getUserById = async (userId) => {
+export const getUserById = async (req, res) => {
   try {
+    const { userId } = req.params;
+
+    if (!userId) {
+      return res.status(400).json({ message: 'User ID is required' });
+    }
+
     const user = await User.findByPk(userId);
 
     if (!user) {
-      console.log('User not found');
-      return null;
+      return res.status(404).json({ message: 'User not found' });
     }
-    console.log('User found:', user);
-    return user;
+
+    const token = jwt.sign({ id: user.id, email: user.email }, JWT_SECRET, {
+      expiresIn: '1h',
+    });
+
+    const membership = await Membership.findOne({ where: { userId: user.id } });
+    const bookingWorkouts = await UserWorkouts.findAll({ where: { userId: user.id } });
+    let decryptedCardData = null;
+    const userBookingWorkouts = [...bookingWorkouts];
+
+    try {
+      decryptedCardData = await getDecryptedCardData(user.id);
+    } catch {
+      decryptedCardData = null;
+    }
+
+    return res.status(200).json({
+      token: token,
+      user: {
+        userId: user.id,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
+        membership: membership || null,
+        dataCard: decryptedCardData || null,
+        workouts: userBookingWorkouts || [],
+      },
+    });
+
   } catch (error) {
-    console.error('Error finding user:', error);
+    console.error('Error fetching user:', error);
+    return res.status(500).json({ message: error.message });
   }
 };
-
