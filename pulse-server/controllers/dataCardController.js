@@ -6,7 +6,7 @@ import DataCard from '../models/DataCard.js';
 
 dotenv.config();
 
-const validateCardData = [
+export const validateCardData = [
   check('cardNumber').isString(),
   check('cvv').isString(),
   check('date').isString(),
@@ -69,9 +69,6 @@ export const createCardData = [
         phoneNumber,
       });
 
-      console.log(cardData, 'cardData');
-
-      console.log('Card data created:', cardData);
       res.status(201).json(cardData);
 
     } catch (error) {

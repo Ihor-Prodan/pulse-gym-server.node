@@ -1,6 +1,7 @@
+import { validationResult } from 'express-validator';
 import DataCard from '../models/DataCard.js';
 import User from '../models/User.js';
-import { decryptCardNumber, encryptCardNumber } from './dataCardController.js';
+import { decryptCardNumber, encryptCardNumber, validateCardData } from './dataCardController.js';
 
 export const updateUser = async (req, res) => {
   try {
@@ -18,6 +19,7 @@ export const updateUser = async (req, res) => {
     await user.save();
 
     return res.status(200).json({ message: 'User data update', user });
+
   } catch (error) {
     console.error('Error update data:', error);
 
@@ -26,7 +28,14 @@ export const updateUser = async (req, res) => {
 };
 
 export const updateCardData = [
+  validateCardData,
   async (req, res) => {
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
     try {
       const { cardNumber, cvv, date, phoneNumber, userId } = req.body;
 
@@ -47,6 +56,7 @@ export const updateCardData = [
 
     } catch (error) {
       console.error('Error updating card data:', error);
+
       res.status(500).json({ message: 'Server error' });
     }
   }

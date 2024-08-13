@@ -14,28 +14,38 @@ export const bookingWorkout = async (req, res) => {
       userId,
     } = req.body;
 
+    const isBookedWorkout = await UserWorkouts.findOne({
+      where: {
+        workoutId: id,
+        userId: userId,
+      },
+    });
+
+    if (isBookedWorkout) {
+      return res.status(400).json({ error: 'You have already booked this workout' });
+    }
+
     const book = await UserWorkouts.create({
       time,
       name,
       date,
       studio,
       trainer,
-      id,
+      workoutId: id,
       location,
       date,
       hard,
       userId,
     });
 
-    console.log(book, 'book');
-
     console.log('Booked workout:', book);
+
     return res.status(201).json(book);
 
   } catch (error) {
     console.error('Error booking workout:', error);
 
-    return res.status(500).json({ error: 'Failed to booking workout' });
+    return res.status(500).json({ error: 'Failed to book workout' });
   }
 };
 

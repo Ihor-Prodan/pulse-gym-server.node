@@ -2,6 +2,15 @@ import { DataTypes } from 'sequelize';
 import sequelize from '../config/database.js';
 
 const UserWorkouts = sequelize.define('UserWorkouts', {
+  id: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true,
+  },
+  workoutId: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
   time: {
     type: DataTypes.STRING,
     allowNull: true,
@@ -16,11 +25,6 @@ const UserWorkouts = sequelize.define('UserWorkouts', {
   },
   trainer: {
     type: DataTypes.STRING,
-    allowNull: false,
-  },
-  id: {
-    type: DataTypes.STRING,
-    primaryKey: true,
     allowNull: false,
   },
   location: {

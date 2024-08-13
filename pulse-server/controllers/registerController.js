@@ -47,8 +47,18 @@ export const registerUser = async (req, res) => {
 
     const membership = await Membership.findOne({ where: { userId: newUser.id } });
     const bookingWorkouts = await UserWorkouts.findAll({ where: { userId: newUser.id } });
+
     let decryptedCardData = null;
-    const userBookingWorkouts = [...bookingWorkouts];
+    const userBookingWorkouts = bookingWorkouts.map(workout => ({
+      id: workout.getDataValue('workoutId'),
+      time: workout.getDataValue('time'),
+      name: workout.getDataValue('name'),
+      studio: workout.getDataValue('studio'),
+      trainer: workout.getDataValue('trainer'),
+      location: workout.getDataValue('location'),
+      date: workout.getDataValue('date'),
+      hard: workout.getDataValue('hard'),
+    }));
 
     try {
       decryptedCardData = await getDecryptedCardData(newUser.id);

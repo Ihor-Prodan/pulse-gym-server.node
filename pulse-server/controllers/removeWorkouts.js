@@ -3,13 +3,13 @@ import UserWorkouts from '../models/UserWorkouts.js';
 export const removeWorkoutById = async (req, res) => {
   try {
     const { workoutId } = req.params;
+    const { userId } = req.body;
 
     const deletedWorkout = await UserWorkouts.destroy({
-      where: { id: workoutId },
+      where: { workoutId: workoutId, userId: userId },
     });
 
     if (deletedWorkout === 0) {
-
       return res.status(404).json({ message: 'Workout not found' });
     }
 
@@ -17,7 +17,6 @@ export const removeWorkoutById = async (req, res) => {
 
   } catch (error) {
     console.error('Error removing workout:', error);
-
     return res.status(500).json({ message: error.message });
   }
 };

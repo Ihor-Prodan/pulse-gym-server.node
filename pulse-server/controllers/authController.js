@@ -31,8 +31,19 @@ export const authenticateUser = async (req, res) => {
 
     const membership = await Membership.findOne({ where: { userId: user.id } });
     const bookingWorkouts = await UserWorkouts.findAll({ where: { userId: user.id } });
+
     let decryptedCardData = null;
-    const userBookingWorkouts = [...bookingWorkouts];
+
+    const userBookingWorkouts = bookingWorkouts.map(workout => ({
+      id: workout.getDataValue('workoutId'),
+      time: workout.getDataValue('time'),
+      name: workout.getDataValue('name'),
+      studio: workout.getDataValue('studio'),
+      trainer: workout.getDataValue('trainer'),
+      location: workout.getDataValue('location'),
+      date: workout.getDataValue('date'),
+      hard: workout.getDataValue('hard'),
+    }));
 
     try {
       decryptedCardData = await getDecryptedCardData(user.id);
@@ -40,6 +51,7 @@ export const authenticateUser = async (req, res) => {
     } catch {
       decryptedCardData = null;
     }
+
     res.cookie('token', token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
@@ -85,8 +97,19 @@ export const getUserById = async (req, res) => {
 
     const membership = await Membership.findOne({ where: { userId: user.id } });
     const bookingWorkouts = await UserWorkouts.findAll({ where: { userId: user.id } });
+
     let decryptedCardData = null;
-    const userBookingWorkouts = [...bookingWorkouts];
+
+    const userBookingWorkouts = bookingWorkouts.map(workout => ({
+      id: workout.getDataValue('workoutId'),
+      time: workout.getDataValue('time'),
+      name: workout.getDataValue('name'),
+      studio: workout.getDataValue('studio'),
+      trainer: workout.getDataValue('trainer'),
+      location: workout.getDataValue('location'),
+      date: workout.getDataValue('date'),
+      hard: workout.getDataValue('hard'),
+    }));
 
     try {
       decryptedCardData = await getDecryptedCardData(user.id);
@@ -109,6 +132,7 @@ export const getUserById = async (req, res) => {
 
   } catch (error) {
     console.error('Error fetching user:', error);
+
     return res.status(500).json({ message: error.message });
   }
 };
