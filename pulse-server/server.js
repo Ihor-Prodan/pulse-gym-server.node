@@ -19,8 +19,13 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 8081;
 
+const corsOptions = {
+  origin: 'https://ihor-prodan.github.io/team-project',
+  optionsSuccessStatus: 200
+};
+
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 //routs
