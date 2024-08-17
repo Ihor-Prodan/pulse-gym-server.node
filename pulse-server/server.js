@@ -20,7 +20,7 @@ const app = express();
 const PORT = process.env.PORT || 8081;
 
 const corsOptions = {
-  origin: 'https://ihor-prodan.github.io/team-project',
+  origin: 'https://ihor-prodan.github.io',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
