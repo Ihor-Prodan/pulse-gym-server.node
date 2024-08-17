@@ -12,6 +12,7 @@ import membershipRouts from './routes/membershipRouts.js';
 import cardRouts from './routes/cardRouts.js';
 import updateUserRouter from './routes/updateUserRouter.js';
 import updateCardRouter from './routes/updateCardRouter.js';
+import { loadData } from './dataDatabase.js';
 
 
 dotenv.config();
@@ -36,8 +37,6 @@ app.use('/auth', userRoutes);
 app.use('/user', updateUserRouter);
 app.use('/card', updateCardRouter);
 
-
-
 (async () => {
   try {
     await sequelize.authenticate();
@@ -45,6 +44,8 @@ app.use('/card', updateCardRouter);
 
     await sequelize.sync();
     console.log('Database synchronized.');
+
+    loadData();
 
     app.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}`);
