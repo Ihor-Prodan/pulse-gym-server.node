@@ -25,7 +25,6 @@ export const registerUser = async (req, res) => {
 
   try {
     const { firstName, lastName, email, password } = req.body;
-
     const existingUser = await User.findOne({ where: { email } });
 
     if (existingUser) {
