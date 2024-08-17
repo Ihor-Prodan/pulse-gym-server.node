@@ -21,6 +21,9 @@ const PORT = process.env.PORT || 8081;
 
 const corsOptions = {
   origin: 'https://ihor-prodan.github.io/team-project',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
   optionsSuccessStatus: 200
 };
 
