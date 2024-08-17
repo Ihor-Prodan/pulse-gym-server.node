@@ -1,5 +1,7 @@
 # Pulse Gym Server
 
+## [DEMO LINK](https://ihor-prodan.github.io/team-project/#/)
+
 ## Project Description
 
 This project is the server-side component of a fitness application that allows users to book workouts and manage their personal account. The server is implemented using Node.js with Express.js and provides all the necessary functionalities to support the fitness application.

@@ -3,9 +3,9 @@ import User from '../models/User.js';
 import { body, validationResult } from 'express-validator';
 import { JWT_SECRET } from './authController.js';
 import jwt from 'jsonwebtoken';
-import Membership from '../models/Membership.js';
 import UserWorkouts from '../models/UserWorkouts.js';
 import { getDecryptedCardData } from './dataCardController.js';
+import Membership from '../models/membership.js';
 
 export const validateRegistration = [
   body('firstName').isString().notEmpty().withMessage('First name is required'),
