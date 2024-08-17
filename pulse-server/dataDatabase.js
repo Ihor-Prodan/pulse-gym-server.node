@@ -1,6 +1,6 @@
-import Trainers from './models/Trainers';
-import Trainings from './models/Trainings';
-import Workouts from './models/Workout';
+import Trainers from './models/Trainers.js';
+import Trainings from './models/Trainings.js';
+import Workouts from './models/Workout.js';
 
 export const trainers = [
   {
@@ -107,8 +107,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.467Z',
-    'updatedAt': '2024-08-07T12:16:23.467Z'
   },
   {
     'time': '7:00 - 8:00',
@@ -120,8 +118,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.531Z',
-    'updatedAt': '2024-08-07T12:16:23.531Z'
   },
   {
     'time': '7:00 - 8:00',
@@ -133,8 +129,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.533Z',
-    'updatedAt': '2024-08-07T12:16:23.533Z'
   },
   {
     'time': '7:00 - 8:00',
@@ -146,8 +140,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 1,
-    'createdAt': '2024-08-07T12:16:23.535Z',
-    'updatedAt': '2024-08-07T12:16:23.535Z'
   },
   {
     'time': '8:00 - 9:00',
@@ -159,8 +151,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 1,
-    'createdAt': '2024-08-07T12:16:23.539Z',
-    'updatedAt': '2024-08-07T12:16:23.539Z'
   },
   {
     'time': '8:00 - 9:00',
@@ -172,8 +162,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.541Z',
-    'updatedAt': '2024-08-07T12:16:23.541Z'
   },
   {
     'time': '8:00 - 9:00',
@@ -185,8 +173,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.544Z',
-    'updatedAt': '2024-08-07T12:16:23.544Z'
   },
   {
     'time': '8:00 - 9:00',
@@ -198,8 +184,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 1,
-    'createdAt': '2024-08-07T12:16:23.546Z',
-    'updatedAt': '2024-08-07T12:16:23.546Z'
   },
   {
     'time': '9:00 - 10:00',
@@ -211,8 +195,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.548Z',
-    'updatedAt': '2024-08-07T12:16:23.548Z'
   },
   {
     'time': '9:00 - 10:00',
@@ -224,8 +206,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 1,
-    'createdAt': '2024-08-07T12:16:23.551Z',
-    'updatedAt': '2024-08-07T12:16:23.551Z'
   },
   {
     'time': '9:00 - 10:00',
@@ -237,8 +217,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.553Z',
-    'updatedAt': '2024-08-07T12:16:23.553Z'
   },
   {
     'time': '10:00 - 11:00',
@@ -250,8 +228,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.554Z',
-    'updatedAt': '2024-08-07T12:16:23.554Z'
   },
   {
     'time': '10:00 - 11:00',
@@ -263,8 +239,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 1,
-    'createdAt': '2024-08-07T12:16:23.555Z',
-    'updatedAt': '2024-08-07T12:16:23.555Z'
   },
   {
     'time': '10:00 - 11:00',
@@ -276,8 +250,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.556Z',
-    'updatedAt': '2024-08-07T12:16:23.556Z'
   },
   {
     'time': '11:00 - 12:00',
@@ -289,8 +261,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.557Z',
-    'updatedAt': '2024-08-07T12:16:23.557Z'
   },
   {
     'time': '12:00 - 13:00',
@@ -302,8 +272,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.558Z',
-    'updatedAt': '2024-08-07T12:16:23.558Z'
   },
   {
     'time': '13:00 - 14:00',
@@ -315,8 +283,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.559Z',
-    'updatedAt': '2024-08-07T12:16:23.559Z'
   },
   {
     'time': '13:00 - 14:00',
@@ -328,8 +294,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.560Z',
-    'updatedAt': '2024-08-07T12:16:23.560Z'
   },
   {
     'time': '13:00 - 14:00',
@@ -341,8 +305,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.561Z',
-    'updatedAt': '2024-08-07T12:16:23.561Z'
   },
   {
     'time': '13:00 - 14:00',
@@ -354,8 +316,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.563Z',
-    'updatedAt': '2024-08-07T12:16:23.563Z'
   },
   {
     'time': '14:00 - 15:00',
@@ -367,8 +327,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 1,
-    'createdAt': '2024-08-07T12:16:23.563Z',
-    'updatedAt': '2024-08-07T12:16:23.563Z'
   },
   {
     'time': '14:00 - 15:00',
@@ -380,8 +338,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.566Z',
-    'updatedAt': '2024-08-07T12:16:23.566Z'
   },
   {
     'time': '14:00 - 15:00',
@@ -393,8 +349,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 1,
-    'createdAt': '2024-08-07T12:16:23.567Z',
-    'updatedAt': '2024-08-07T12:16:23.567Z'
   },
   {
     'time': '14:00 - 15:00',
@@ -406,8 +360,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.568Z',
-    'updatedAt': '2024-08-07T12:16:23.568Z'
   },
   {
     'time': '14:00 - 15:00',
@@ -419,8 +371,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 1,
-    'createdAt': '2024-08-07T12:16:23.569Z',
-    'updatedAt': '2024-08-07T12:16:23.569Z'
   },
   {
     'time': '15:00 - 16:00',
@@ -432,8 +382,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 1,
-    'createdAt': '2024-08-07T12:16:23.571Z',
-    'updatedAt': '2024-08-07T12:16:23.571Z'
   },
   {
     'time': '15:00 - 16:00',
@@ -445,8 +393,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 1,
-    'createdAt': '2024-08-07T12:16:23.572Z',
-    'updatedAt': '2024-08-07T12:16:23.572Z'
   },
   {
     'time': '15:00 - 16:00',
@@ -458,8 +404,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.573Z',
-    'updatedAt': '2024-08-07T12:16:23.573Z'
   },
   {
     'time': '16:00 - 17:00',
@@ -471,8 +415,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 1,
-    'createdAt': '2024-08-07T12:16:23.574Z',
-    'updatedAt': '2024-08-07T12:16:23.574Z'
   },
   {
     'time': '16:00 - 17:00',
@@ -484,8 +426,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.575Z',
-    'updatedAt': '2024-08-07T12:16:23.575Z'
   },
   {
     'time': '16:00 - 17:00',
@@ -497,8 +437,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.576Z',
-    'updatedAt': '2024-08-07T12:16:23.576Z'
   },
   {
     'time': '16:00 - 17:00',
@@ -510,8 +448,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 1,
-    'createdAt': '2024-08-07T12:16:23.577Z',
-    'updatedAt': '2024-08-07T12:16:23.577Z'
   },
   {
     'time': '17:00 - 18:00',
@@ -523,8 +459,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 1,
-    'createdAt': '2024-08-07T12:16:23.578Z',
-    'updatedAt': '2024-08-07T12:16:23.578Z'
   },
   {
     'time': '17:00 - 18:00',
@@ -536,8 +470,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 1,
-    'createdAt': '2024-08-07T12:16:23.579Z',
-    'updatedAt': '2024-08-07T12:16:23.579Z'
   },
   {
     'time': '17:00 - 18:00',
@@ -549,8 +481,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 1,
-    'createdAt': '2024-08-07T12:16:23.580Z',
-    'updatedAt': '2024-08-07T12:16:23.580Z'
   },
   {
     'time': '18:00 - 19:00',
@@ -562,8 +492,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 1,
-    'createdAt': '2024-08-07T12:16:23.581Z',
-    'updatedAt': '2024-08-07T12:16:23.581Z'
   },
   {
     'time': '18:00 - 19:00',
@@ -575,8 +503,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 1,
-    'createdAt': '2024-08-07T12:16:23.583Z',
-    'updatedAt': '2024-08-07T12:16:23.583Z'
   },
   {
     'time': '18:00 - 19:00',
@@ -588,8 +514,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 1,
-    'createdAt': '2024-08-07T12:16:23.584Z',
-    'updatedAt': '2024-08-07T12:16:23.584Z'
   },
   {
     'time': '18:00 - 19:00',
@@ -601,8 +525,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 1,
-    'createdAt': '2024-08-07T12:16:23.585Z',
-    'updatedAt': '2024-08-07T12:16:23.585Z'
   },
   {
     'time': '19:00 - 20:00',
@@ -614,8 +536,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.587Z',
-    'updatedAt': '2024-08-07T12:16:23.587Z'
   },
   {
     'time': '19:00 - 20:00',
@@ -627,8 +547,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 1,
-    'createdAt': '2024-08-07T12:16:23.589Z',
-    'updatedAt': '2024-08-07T12:16:23.589Z'
   },
   {
     'time': '19:00 - 20:00',
@@ -640,8 +558,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 1,
-    'createdAt': '2024-08-07T12:16:23.590Z',
-    'updatedAt': '2024-08-07T12:16:23.590Z'
   },
   {
     'time': '19:00 - 20:00',
@@ -653,8 +569,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.591Z',
-    'updatedAt': '2024-08-07T12:16:23.591Z'
   },
   {
     'time': '20:00 - 21:00',
@@ -666,8 +580,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 1,
-    'createdAt': '2024-08-07T12:16:23.592Z',
-    'updatedAt': '2024-08-07T12:16:23.592Z'
   },
   {
     'time': '20:00 - 21:00',
@@ -679,8 +591,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.593Z',
-    'updatedAt': '2024-08-07T12:16:23.593Z'
   },
   {
     'time': '20:00 - 21:00',
@@ -692,8 +602,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.595Z',
-    'updatedAt': '2024-08-07T12:16:23.595Z'
   },
   {
     'time': '20:00 - 21:00',
@@ -705,8 +613,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.596Z',
-    'updatedAt': '2024-08-07T12:16:23.596Z'
   },
   {
     'time': '21:00 - 22:00',
@@ -718,8 +624,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.597Z',
-    'updatedAt': '2024-08-07T12:16:23.597Z'
   },
   {
     'time': '21:00 - 22:00',
@@ -731,8 +635,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.598Z',
-    'updatedAt': '2024-08-07T12:16:23.598Z'
   },
   {
     'time': '21:00 - 22:00',
@@ -744,8 +646,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 1,
-    'createdAt': '2024-08-07T12:16:23.599Z',
-    'updatedAt': '2024-08-07T12:16:23.599Z'
   },
   {
     'time': '21:00 - 22:00',
@@ -757,8 +657,6 @@ export const trainings = [
     'date': '',
     'hard': '',
     'capacity': 1,
-    'createdAt': '2024-08-07T12:16:23.600Z',
-    'updatedAt': '2024-08-07T12:16:23.600Z'
   },
   {
     'time': '7:00 - 8:00',
@@ -770,8 +668,6 @@ export const trainings = [
     'date': '',
     'hard': '2',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.601Z',
-    'updatedAt': '2024-08-07T12:16:23.601Z'
   },
   {
     'time': '7:00 - 8:00',
@@ -783,8 +679,6 @@ export const trainings = [
     'date': '',
     'hard': '3',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.602Z',
-    'updatedAt': '2024-08-07T12:16:23.602Z'
   },
   {
     'time': '7:00 - 8:00',
@@ -796,8 +690,6 @@ export const trainings = [
     'date': '',
     'hard': '2',
     'capacity': 3,
-    'createdAt': '2024-08-07T12:16:23.604Z',
-    'updatedAt': '2024-08-07T12:16:23.604Z'
   },
   {
     'time': '8:00 - 9:00',
@@ -809,8 +701,6 @@ export const trainings = [
     'date': '',
     'hard': '2',
     'capacity': 5,
-    'createdAt': '2024-08-07T12:16:23.606Z',
-    'updatedAt': '2024-08-07T12:16:23.606Z'
   },
   {
     'time': '8:00 - 9:00',
@@ -822,8 +712,6 @@ export const trainings = [
     'date': '',
     'hard': '2',
     'capacity': 5,
-    'createdAt': '2024-08-07T12:16:23.607Z',
-    'updatedAt': '2024-08-07T12:16:23.607Z'
   },
   {
     'time': '9:00 - 10:00',
@@ -835,8 +723,6 @@ export const trainings = [
     'date': '',
     'hard': '3',
     'capacity': 5,
-    'createdAt': '2024-08-07T12:16:23.608Z',
-    'updatedAt': '2024-08-07T12:16:23.608Z'
   },
   {
     'time': '9:00 - 10:00',
@@ -848,8 +734,6 @@ export const trainings = [
     'date': '',
     'hard': '3',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.609Z',
-    'updatedAt': '2024-08-07T12:16:23.609Z'
   },
   {
     'time': '11:00 - 12:00',
@@ -861,8 +745,6 @@ export const trainings = [
     'date': '',
     'hard': '3',
     'capacity': 5,
-    'createdAt': '2024-08-07T12:16:23.610Z',
-    'updatedAt': '2024-08-07T12:16:23.610Z'
   },
   {
     'time': '13:00 - 14:00',
@@ -874,8 +756,6 @@ export const trainings = [
     'date': '',
     'hard': '3',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.611Z',
-    'updatedAt': '2024-08-07T12:16:23.611Z'
   },
   {
     'time': '14:00 - 15:00',
@@ -887,8 +767,6 @@ export const trainings = [
     'date': '',
     'hard': '3',
     'capacity': 5,
-    'createdAt': '2024-08-07T12:16:23.612Z',
-    'updatedAt': '2024-08-07T12:16:23.612Z'
   },
   {
     'time': '14:00 - 15:00',
@@ -900,8 +778,6 @@ export const trainings = [
     'date': '',
     'hard': '2',
     'capacity': 5,
-    'createdAt': '2024-08-07T12:16:23.613Z',
-    'updatedAt': '2024-08-07T12:16:23.613Z'
   },
   {
     'time': '14:00 - 15:00',
@@ -913,8 +789,6 @@ export const trainings = [
     'date': '',
     'hard': '2',
     'capacity': 5,
-    'createdAt': '2024-08-07T12:16:23.614Z',
-    'updatedAt': '2024-08-07T12:16:23.614Z'
   },
   {
     'time': '16:00 - 17:00',
@@ -926,8 +800,6 @@ export const trainings = [
     'date': '',
     'hard': '2',
     'capacity': 5,
-    'createdAt': '2024-08-07T12:16:23.615Z',
-    'updatedAt': '2024-08-07T12:16:23.615Z'
   },
   {
     'time': '16:00 - 17:00',
@@ -939,8 +811,6 @@ export const trainings = [
     'date': '',
     'hard': '2',
     'capacity': 5,
-    'createdAt': '2024-08-07T12:16:23.616Z',
-    'updatedAt': '2024-08-07T12:16:23.616Z'
   },
   {
     'time': '17:00 - 18:00',
@@ -952,8 +822,6 @@ export const trainings = [
     'date': '',
     'hard': '1',
     'capacity': 5,
-    'createdAt': '2024-08-07T12:16:23.617Z',
-    'updatedAt': '2024-08-07T12:16:23.617Z'
   },
   {
     'time': '19:00 - 20:00',
@@ -965,8 +833,6 @@ export const trainings = [
     'date': '',
     'hard': '2',
     'capacity': 5,
-    'createdAt': '2024-08-07T12:16:23.619Z',
-    'updatedAt': '2024-08-07T12:16:23.619Z'
   },
   {
     'time': '19:00 - 20:00',
@@ -978,8 +844,6 @@ export const trainings = [
     'date': '',
     'hard': '2',
     'capacity': 5,
-    'createdAt': '2024-08-07T12:16:23.620Z',
-    'updatedAt': '2024-08-07T12:16:23.620Z'
   },
   {
     'time': '19:00 - 20:00',
@@ -991,8 +855,6 @@ export const trainings = [
     'date': '',
     'hard': '2',
     'capacity': 5,
-    'createdAt': '2024-08-07T12:16:23.622Z',
-    'updatedAt': '2024-08-07T12:16:23.622Z'
   },
   {
     'time': '19:00 - 20:00',
@@ -1004,8 +866,6 @@ export const trainings = [
     'date': '',
     'hard': '2',
     'capacity': 5,
-    'createdAt': '2024-08-07T12:16:23.623Z',
-    'updatedAt': '2024-08-07T12:16:23.623Z'
   },
   {
     'time': '20:00 - 21:00',
@@ -1017,8 +877,6 @@ export const trainings = [
     'date': '',
     'hard': '2',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.624Z',
-    'updatedAt': '2024-08-07T12:16:23.624Z'
   },
   {
     'time': '20:00 - 21:00',
@@ -1030,8 +888,6 @@ export const trainings = [
     'date': '',
     'hard': '2',
     'capacity': 5,
-    'createdAt': '2024-08-07T12:16:23.625Z',
-    'updatedAt': '2024-08-07T12:16:23.625Z'
   },
   {
     'time': '20:00 - 21:00',
@@ -1043,8 +899,6 @@ export const trainings = [
     'date': '',
     'hard': '2',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.626Z',
-    'updatedAt': '2024-08-07T12:16:23.626Z'
   },
   {
     'time': '20:00 - 21:00',
@@ -1056,8 +910,6 @@ export const trainings = [
     'date': '',
     'hard': '2',
     'capacity': 5,
-    'createdAt': '2024-08-07T12:16:23.627Z',
-    'updatedAt': '2024-08-07T12:16:23.627Z'
   },
   {
     'time': '21:00 - 22:00',
@@ -1069,8 +921,6 @@ export const trainings = [
     'date': '',
     'hard': '1',
     'capacity': 0,
-    'createdAt': '2024-08-07T12:16:23.629Z',
-    'updatedAt': '2024-08-07T12:16:23.629Z'
   },
   {
     'time': '21:00 - 22:00',
@@ -1082,8 +932,6 @@ export const trainings = [
     'date': '',
     'hard': '1',
     'capacity': 5,
-    'createdAt': '2024-08-07T12:16:23.631Z',
-    'updatedAt': '2024-08-07T12:16:23.631Z'
   }
 ];
 
@@ -1099,8 +947,6 @@ export const worcouts = [
     'image': 'https://i.ibb.co/873vpjf/Hatha-Yoga.jpg',
     'date': '',
     'id': '1',
-    'createdAt': '2024-08-05T09:50:50.785Z',
-    'updatedAt': '2024-08-05T09:50:50.785Z'
   },
   {
     'name': 'Yin Yoga',
@@ -1113,8 +959,6 @@ export const worcouts = [
     'image': 'https://i.ibb.co/NyTvhDT/Yin-Yoga.jpg',
     'date': '',
     'id': '2',
-    'createdAt': '2024-08-05T09:50:50.849Z',
-    'updatedAt': '2024-08-05T09:50:50.849Z'
   },
   {
     'name': 'Power Yoga',
@@ -1127,8 +971,6 @@ export const worcouts = [
     'image': 'https://i.ibb.co/F7zJ6rG/Power-Yoga.jpg',
     'date': '',
     'id': '3',
-    'createdAt': '2024-08-05T09:50:50.854Z',
-    'updatedAt': '2024-08-05T09:50:50.854Z'
   },
   {
     'name': 'Stretch & Relax',
@@ -1141,8 +983,6 @@ export const worcouts = [
     'image': 'https://i.ibb.co/dghNN36/Stretch-Relax.jpg',
     'date': '',
     'id': '4',
-    'createdAt': '2024-08-05T09:50:50.857Z',
-    'updatedAt': '2024-08-05T09:50:50.857Z'
   },
   {
     'name': 'Barre',
@@ -1155,8 +995,6 @@ export const worcouts = [
     'image': 'https://i.ibb.co/r3nhqGN/Barre.jpg',
     'date': '',
     'id': '5',
-    'createdAt': '2024-08-05T09:50:50.858Z',
-    'updatedAt': '2024-08-05T09:50:50.858Z'
   },
   {
     'name': 'Tai Chi',
@@ -1169,8 +1007,6 @@ export const worcouts = [
     'image': 'https://i.ibb.co/ZJJ6RGB/Tai-Chi.jpg',
     'date': '',
     'id': '6',
-    'createdAt': '2024-08-05T09:50:50.863Z',
-    'updatedAt': '2024-08-05T09:50:50.863Z'
   },
   {
     'name': 'Meditation',
@@ -1183,8 +1019,6 @@ export const worcouts = [
     'image': 'https://i.ibb.co/Fgjr0s4/Meditation.jpg',
     'date': '',
     'id': '7',
-    'createdAt': '2024-08-05T09:50:50.866Z',
-    'updatedAt': '2024-08-05T09:50:50.866Z'
   },
   {
     'name': 'Circuit Training',
@@ -1197,8 +1031,6 @@ export const worcouts = [
     'image': 'https://i.ibb.co/TqDjfwY/Circuit-Training.jpg',
     'date': '',
     'id': '8',
-    'createdAt': '2024-08-05T09:50:50.868Z',
-    'updatedAt': '2024-08-05T09:50:50.868Z'
   },
   {
     'name': 'HI-SIT',
@@ -1211,8 +1043,6 @@ export const worcouts = [
     'image': 'https://i.ibb.co/FHb0c41/HI-SIT.jpg',
     'date': '',
     'id': '9',
-    'createdAt': '2024-08-05T09:50:50.870Z',
-    'updatedAt': '2024-08-05T09:50:50.870Z'
   },
   {
     'name': 'Powerlifting',
@@ -1225,8 +1055,6 @@ export const worcouts = [
     'image': 'https://i.ibb.co/yf1zxmb/Powerlifting.jpg',
     'date': '',
     'id': '10',
-    'createdAt': '2024-08-05T09:50:50.873Z',
-    'updatedAt': '2024-08-05T09:50:50.873Z'
   },
   {
     'name': 'Hill Climb',
@@ -1239,8 +1067,6 @@ export const worcouts = [
     'image': 'https://i.ibb.co/7kvz44H/Hill-Climb.jpg',
     'date': '',
     'id': '11',
-    'createdAt': '2024-08-05T09:50:50.875Z',
-    'updatedAt': '2024-08-05T09:50:50.875Z'
   },
   {
     'name': 'Interval Ride',
@@ -1253,8 +1079,6 @@ export const worcouts = [
     'image': 'https://i.ibb.co/zPhxfjH/Interval-Ride-jpeg.jpg',
     'date': '',
     'id': '12',
-    'createdAt': '2024-08-05T09:50:50.877Z',
-    'updatedAt': '2024-08-05T09:50:50.877Z'
   },
   {
     'name': 'Recovery Ride',
@@ -1267,8 +1091,6 @@ export const worcouts = [
     'image': 'https://i.ibb.co/WPwDkf2/Recovery-Ride.jpg',
     'date': '',
     'id': '13',
-    'createdAt': '2024-08-05T09:50:50.879Z',
-    'updatedAt': '2024-08-05T09:50:50.879Z'
   },
   {
     'name': 'Sprint Drills',
@@ -1281,8 +1103,6 @@ export const worcouts = [
     'image': 'https://i.ibb.co/gt48tLd/Sprint-Drills.jpg',
     'date': '',
     'id': '14',
-    'createdAt': '2024-08-05T09:50:50.881Z',
-    'updatedAt': '2024-08-05T09:50:50.881Z'
   },
   {
     'name': 'HIIT',
@@ -1295,8 +1115,6 @@ export const worcouts = [
     'image': 'https://i.ibb.co/pWXmcHJ/HIIT.jpg',
     'date': '',
     'id': '15',
-    'createdAt': '2024-08-05T09:50:50.884Z',
-    'updatedAt': '2024-08-05T09:50:50.884Z'
   },
   {
     'name': 'Kickboxing Cardio',
@@ -1309,8 +1127,6 @@ export const worcouts = [
     'image': 'https://i.ibb.co/0n8P8S6/Kickboxing-Cardio.jpg',
     'date': '',
     'id': '16',
-    'createdAt': '2024-08-05T09:50:50.886Z',
-    'updatedAt': '2024-08-05T09:50:50.886Z'
   },
   {
     'name': 'Aerobic Step',
@@ -1323,8 +1139,6 @@ export const worcouts = [
     'image': 'https://i.ibb.co/CzTg2LB/Aerobic-Step.jpg',
     'date': '',
     'id': '17',
-    'createdAt': '2024-08-05T09:50:50.887Z',
-    'updatedAt': '2024-08-05T09:50:50.887Z'
   },
   {
     'name': 'Zumba',
@@ -1337,8 +1151,6 @@ export const worcouts = [
     'image': 'https://i.ibb.co/yqSVwPV/Zumba-jpeg.jpg',
     'date': '',
     'id': '18',
-    'createdAt': '2024-08-05T09:50:50.889Z',
-    'updatedAt': '2024-08-05T09:50:50.889Z'
   }
 ];
 
