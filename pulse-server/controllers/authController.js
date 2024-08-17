@@ -2,7 +2,7 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 import User from '../models/User.js';
-import Membership from '../models/Membership.js';
+import Membership from '../models/membership.js';
 import { getDecryptedCardData } from './dataCardController.js';
 import UserWorkouts from '../models/UserWorkouts.js';
 
@@ -30,11 +30,13 @@ export const authenticateUser = async (req, res) => {
     });
 
     const membership = await Membership.findOne({ where: { userId: user.id } });
-    const bookingWorkouts = await UserWorkouts.findAll({ where: { userId: user.id } });
+    const bookingWorkouts = await UserWorkouts.findAll({
+      where: { userId: user.id },
+    });
 
     let decryptedCardData = null;
 
-    const userBookingWorkouts = bookingWorkouts.map(workout => ({
+    const userBookingWorkouts = bookingWorkouts.map((workout) => ({
       id: workout.getDataValue('workoutId'),
       time: workout.getDataValue('time'),
       name: workout.getDataValue('name'),
@@ -47,7 +49,6 @@ export const authenticateUser = async (req, res) => {
 
     try {
       decryptedCardData = await getDecryptedCardData(user.id);
-
     } catch {
       decryptedCardData = null;
     }
@@ -71,7 +72,6 @@ export const authenticateUser = async (req, res) => {
         workouts: userBookingWorkouts || [],
       },
     });
-
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
@@ -96,11 +96,13 @@ export const getUserById = async (req, res) => {
     });
 
     const membership = await Membership.findOne({ where: { userId: user.id } });
-    const bookingWorkouts = await UserWorkouts.findAll({ where: { userId: user.id } });
+    const bookingWorkouts = await UserWorkouts.findAll({
+      where: { userId: user.id },
+    });
 
     let decryptedCardData = null;
 
-    const userBookingWorkouts = bookingWorkouts.map(workout => ({
+    const userBookingWorkouts = bookingWorkouts.map((workout) => ({
       id: workout.getDataValue('workoutId'),
       time: workout.getDataValue('time'),
       name: workout.getDataValue('name'),
@@ -129,7 +131,6 @@ export const getUserById = async (req, res) => {
         workouts: userBookingWorkouts || [],
       },
     });
-
   } catch (error) {
     console.error('Error fetching user:', error);
 

@@ -40,15 +40,23 @@ export const registerUser = async (req, res) => {
       password: hashedPassword,
     });
 
-    const token = jwt.sign({ id: newUser.id, email: newUser.email }, JWT_SECRET, {
-      expiresIn: '1h',
+    const token = jwt.sign(
+      { id: newUser.id, email: newUser.email },
+      JWT_SECRET,
+      {
+        expiresIn: '1h',
+      },
+    );
+
+    const membership = await Membership.findOne({
+      where: { userId: newUser.id },
+    });
+    const bookingWorkouts = await UserWorkouts.findAll({
+      where: { userId: newUser.id },
     });
 
-    const membership = await Membership.findOne({ where: { userId: newUser.id } });
-    const bookingWorkouts = await UserWorkouts.findAll({ where: { userId: newUser.id } });
-
     let decryptedCardData = null;
-    const userBookingWorkouts = bookingWorkouts.map(workout => ({
+    const userBookingWorkouts = bookingWorkouts.map((workout) => ({
       id: workout.getDataValue('workoutId'),
       time: workout.getDataValue('time'),
       name: workout.getDataValue('name'),
@@ -84,7 +92,6 @@ export const registerUser = async (req, res) => {
         workouts: userBookingWorkouts || [],
       },
     });
-
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

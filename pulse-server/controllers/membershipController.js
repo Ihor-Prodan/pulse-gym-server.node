@@ -15,7 +15,7 @@ export const createMembership = async (req, res) => {
       unlimited,
       locker,
       price,
-      best
+      best,
     } = req.body;
 
     const userId = membershipId;
@@ -37,12 +37,11 @@ export const createMembership = async (req, res) => {
       unlimited,
       locker,
       price,
-      best
+      best,
     });
 
     console.log('Membership created:', membership);
     res.status(201).json(membership);
-
   } catch (error) {
     console.error('Error creating membership:', error);
 
@@ -55,7 +54,6 @@ export const getMembershipById = async (id) => {
     const membership = await Membership.findByPk(id);
 
     console.log('Membership found:', membership);
-
   } catch (error) {
     console.error('Error finding membership:', error);
   }

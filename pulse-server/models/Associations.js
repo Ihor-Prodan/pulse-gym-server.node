@@ -9,22 +9,22 @@ Membership.belongsTo(User, { foreignKey: 'userId' });
 
 User.hasMany(Workout, {
   foreignKey: 'userId',
-  as: 'workouts'
+  as: 'workouts',
 });
 
 Workout.belongsTo(User, {
   foreignKey: 'userId',
-  as: 'user'
+  as: 'user',
 });
 
 User.hasOne(DataCard, {
   foreignKey: 'userId',
-  as: 'dataCard'
+  as: 'dataCard',
 });
 
 DataCard.belongsTo(User, {
   foreignKey: 'userId',
-  as: 'user'
+  as: 'user',
 });
 
 Workout.belongsTo(Trainers);
