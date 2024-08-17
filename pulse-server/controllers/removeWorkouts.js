@@ -17,6 +17,7 @@ export const removeWorkoutById = async (req, res) => {
 
   } catch (error) {
     console.error('Error removing workout:', error);
+
     return res.status(500).json({ message: error.message });
   }
 };
