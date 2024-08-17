@@ -2,9 +2,9 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 import User from '../models/User.js';
-import Membership from '../models/membership.js';
 import { getDecryptedCardData } from './dataCardController.js';
 import UserWorkouts from '../models/UserWorkouts.js';
+import Membership from '../models/membership.js';
 
 dotenv.config();
 
@@ -73,6 +73,7 @@ export const authenticateUser = async (req, res) => {
       },
     });
   } catch (error) {
+
     return res.status(500).json({ message: error.message });
   }
 };
