@@ -1,4 +1,4 @@
-import Membership from '../models/membership.js';
+import Membership from '../models/Membership.js';
 import User from '../models/User.js';
 
 export const createMembership = async (req, res) => {

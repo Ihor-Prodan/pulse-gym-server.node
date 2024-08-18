@@ -2,7 +2,7 @@ import DataCard from './DataCard.js';
 import User from './User.js';
 import Workout from './Workout.js';
 import Trainers from './Trainers.js';
-import Membership from './membership.js';
+import Membership from './Membership.js';
 
 User.hasOne(Membership, { foreignKey: 'userId' });
 Membership.belongsTo(User, { foreignKey: 'userId' });

@@ -5,7 +5,7 @@ import { JWT_SECRET } from './authController.js';
 import jwt from 'jsonwebtoken';
 import UserWorkouts from '../models/UserWorkouts.js';
 import { getDecryptedCardData } from './dataCardController.js';
-import Membership from '../models/membership.js';
+import Membership from '../models/Membership.js';
 
 export const validateRegistration = [
   body('firstName').isString().notEmpty().withMessage('First name is required'),
